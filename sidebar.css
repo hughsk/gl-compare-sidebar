@@ -1,0 +1,190 @@
+.gl-compare-sidebar {
+  position: fixed;
+  top: 4px;
+  left: -328px;
+  bottom: 4px;
+  width: 320px;
+  padding: 4px;
+  background: #242435;
+  background: rgba(52,54,59,0.9);
+  color: #FFF;
+  font-family: monospace;
+  transition: left 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.gl-compare-sidebar.enabled {
+  left: 4px;
+}
+
+.gl-compare-content {
+  background: rgba(255,255,255,0.1);
+  position: absolute;
+  left: 0; right: 0;
+  top: 52px;
+  bottom: 112px;
+  padding: 24px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  line-height: 1.35em;
+  font-size: 14px;
+}
+
+.gl-compare-sidebar ul {
+  list-style-type: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(52,54,59,0.65);
+  height: 48px;
+}
+
+.gl-compare-sidebar ul > li {
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: #A9B0C2;
+  border-left: 4px solid rgba(52,54,59,0.65);
+  border-right: 4px solid rgba(52,54,59,0.65);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 100%;
+  float: left;
+}
+
+.gl-compare-top > li {
+  background-size: 24px 24px;
+}
+.gl-compare-top > .gl-compare-test {
+  background-size: 18px 18px;
+}
+
+.gl-compare-mode > li[data-mode] {
+  width: 33.3333333333%;
+  background-size: 21px 21px;
+}
+
+.gl-compare-sidebar ul > li:first-child,
+.gl-compare-sidebar ul > li:last-child {
+  border: 0;
+}
+
+.gl-compare-sidebar ul > li[data-mode] {
+  transition: background-color 0.1s;
+}
+
+.gl-compare-sidebar ul > li[data-mode]:hover {
+  background-color: #66C4FF;
+}
+
+.gl-compare-sidebar ul > li[data-mode].selected {
+  background-color: #61FF90;
+}
+
+.gl-compare-sidebar .gl-compare-mode {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 48px;
+  height: 64px;
+}
+
+.gl-compare-amount {
+  background: #A9B0C2;
+  position: absolute;
+  height: 32px;
+  padding: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  cursor: ew-resize;
+}
+
+.gl-compare-inner {
+  background-color: #DEE7FF;
+  height: 100%;
+  width: 50%;
+}
+
+.gl-compare-top > li {
+  width: 48px;
+}
+
+.gl-compare-top > .gl-compare-test {
+  background-color: #61FF90;
+}
+
+.gl-compare-top > .gl-compare-status {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 48px;
+  right: 48px;
+  width: auto;
+}
+
+.gl-compare-top > .gl-compare-hide {
+  float: right;
+  position: relative;
+  left: 56px;
+  background-color: #FFE169;
+  transition: left 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  overflow: hidden;
+}
+
+.gl-compare-sidebar.enabled .gl-compare-hide {
+  left: 0;
+}
+
+.gl-compare-show {
+  transition: top 0.25s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.gl-compare-sidebar.enabled .gl-compare-show {
+  top: 48px;
+}
+
+.gl-compare-show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  background: #A9B0C2;
+  background-size: 32px 32px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.gl-compare-sidebar.enabled .gl-compare-show {
+  top: -48px;
+}
+
+.gl-compare-sidebar li[data-mode="onion"] {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path style="text-indent:0;text-align:start;line-height:normal;text-transform:none;block-progression:tb;-inkscape-font-specification:Sans" fill="#34363B" d="M7.375 5c-1.31 0-2.375 1.065-2.375 2.375v12.531c0 1.31 1.065 2.375 2.375 2.375h12.531c1.31 0 2.375-1.065 2.375-2.375v-12.531c0-1.31-1.065-2.375-2.375-2.375h-12.531zm23.25 1.188c-1.31 0-2.375 1.065-2.375 2.375v10.188c0 1.31 1.065 2.375 2.375 2.375h10.188c1.31 0 2.375-1.065 2.375-2.375v-10.188c0-1.31-1.065-2.375-2.375-2.375h-10.188zm20.906 1c-1.31 0-2.375 1.065-2.375 2.375v8.188c0 1.31 1.065 2.375 2.375 2.375h8.156c1.31 0 2.375-1.065 2.375-2.375v-8.188c0-1.31-1.065-2.375-2.375-2.375h-8.156zm18.875.875c-1.292 0-2.375 1.033-2.375 2.344v6.469c0 1.31 1.065 2.375 2.375 2.375h6.469c1.31 0 2.375-1.065 2.375-2.375v-6.469c0-1.31-1.083-2.344-2.375-2.344h-6.469zm17.188.719c-1.31 0-2.375 1.065-2.375 2.375v5c0 1.31 1.065 2.375 2.375 2.375h5.031c1.31 0 2.375-1.065 2.375-2.375v-5c0-1.31-1.065-2.375-2.375-2.375h-5.031zm-79.031 19.469c-1.31 0-2.375 1.065-2.375 2.375v10.188c0 1.31 1.065 2.375 2.375 2.375h10.188c1.31 0 2.375-1.065 2.375-2.375v-10.188c0-1.31-1.065-2.375-2.375-2.375h-10.188zm22.625.563c-1.31 0-2.375 1.065-2.375 2.375v8.188c0 1.31 1.065 2.375 2.375 2.375h8.188c1.31 0 2.375-1.065 2.375-2.375v-8.188c0-1.31-1.065-2.375-2.375-2.375h-8.188zm20.625.469c-1.31 0-2.375 1.065-2.375 2.375v6.469c0 1.31 1.065 2.375 2.375 2.375h6.469c1.31 0 2.375-1.065 2.375-2.375v-6.469c0-1.31-1.065-2.375-2.375-2.375h-6.469zm18.938.406c-1.31 0-2.375 1.065-2.375 2.375v5.031c0 1.31 1.065 2.375 2.375 2.375h5c1.31 0 2.375-1.065 2.375-2.375v-5.031c0-1.31-1.065-2.375-2.375-2.375h-5zm17.469.344c-1.31 0-2.375 1.065-2.375 2.375v3.781c0 1.31 1.065 2.375 2.375 2.375h3.781c1.31 0 2.375-1.065 2.375-2.375v-3.781c0-1.31-1.065-2.375-2.375-2.375h-3.781zm-78.656 19.125c-1.31 0-2.375 1.065-2.375 2.375v8.156c0 1.31 1.065 2.375 2.375 2.375h8.188c1.31 0 2.375-1.065 2.375-2.375v-8.156c0-1.31-1.065-2.375-2.375-2.375h-8.188zm22.094.281c-1.31 0-2.375 1.065-2.375 2.375v6.469c0 1.31 1.065 2.375 2.375 2.375h6.469c1.31 0 2.375-1.065 2.375-2.375v-6.469c0-1.31-1.065-2.375-2.375-2.375h-6.469zm20.406.25c-1.31 0-2.375 1.065-2.375 2.375v5.031c0 1.31 1.065 2.375 2.375 2.375h5.031c1.31 0 2.375-1.065 2.375-2.375v-5.031c0-1.31-1.065-2.375-2.375-2.375h-5.031zm18.938.219c-1.31 0-2.375 1.065-2.375 2.375v3.781c0 1.31 1.065 2.375 2.375 2.375h3.813c1.31 0 2.375-1.065 2.375-2.375v-3.781c0-1.31-1.065-2.375-2.375-2.375h-3.813zm17.719.188c-1.31 0-2.375 1.065-2.375 2.375v2.719c0 1.31 1.065 2.375 2.375 2.375h2.75c1.31 0 2.375-1.065 2.375-2.375v-2.719c0-1.31-1.065-2.375-2.375-2.375h-2.75zm-78.313 17.938c-1.31 0-2.344 1.083-2.344 2.375v6.469c0 1.292 1.033 2.375 2.344 2.375h6.469c1.31 0 2.375-1.065 2.375-2.375v-6.469c0-1.31-1.065-2.375-2.375-2.375h-6.469zm21.656.344c-1.31 0-2.375 1.065-2.375 2.375v5c0 1.31 1.065 2.375 2.375 2.375h5.031c1.31 0 2.375-1.065 2.375-2.375v-5c0-1.31-1.065-2.375-2.375-2.375h-5.031zm20.219.25c-1.31 0-2.375 1.065-2.375 2.375v3.813c0 1.31 1.065 2.375 2.375 2.375h3.781c1.31 0 2.375-1.065 2.375-2.375v-3.813c0-1.31-1.065-2.375-2.375-2.375h-3.781zm18.969.25c-1.31 0-2.375 1.065-2.375 2.375v2.75c0 1.31 1.065 2.375 2.375 2.375h2.75c1.31 0 2.375-1.065 2.375-2.375v-2.75c0-1.31-1.065-2.375-2.375-2.375h-2.75zm17.938.188c-1.31 0-2.375 1.065-2.375 2.375v1.875c0 1.31 1.065 2.375 2.375 2.375h1.844c1.31 0 2.375-1.065 2.375-2.375v-1.875c0-1.31-1.065-2.375-2.375-2.375h-1.844zm-78.031 16.156c-1.31 0-2.375 1.065-2.375 2.375v5.031c0 1.31 1.065 2.375 2.375 2.375h5c1.31 0 2.375-1.065 2.375-2.375v-5.031c0-1.31-1.065-2.375-2.375-2.375h-5zm21.25.625c-1.31 0-2.375 1.065-2.375 2.375v3.781c0 1.31 1.065 2.375 2.375 2.375h3.781c1.31 0 2.375-1.065 2.375-2.375v-3.781c0-1.31-1.065-2.375-2.375-2.375h-3.781zm20.063.5c-1.31 0-2.375 1.065-2.375 2.375v2.75c0 1.31 1.065 2.375 2.375 2.375h2.719c1.31 0 2.375-1.065 2.375-2.375v-2.75c0-1.31-1.065-2.375-2.375-2.375h-2.719zm18.969.469c-1.31 0-2.375 1.065-2.375 2.375v1.844c0 1.31 1.065 2.375 2.375 2.375h1.875c1.31 0 2.375-1.065 2.375-2.375v-1.844c0-1.31-1.065-2.375-2.375-2.375h-1.875zm18.125.375c-1.31 0-2.375 1.065-2.375 2.375v1.094c0 1.31 1.065 2.375 2.375 2.375h1.094c1.31 0 2.375-1.065 2.375-2.375v-1.094c0-1.31-1.065-2.375-2.375-2.375h-1.094z" color="#34363B" overflow="visible" enable-background="accumulate" font-family="Sans"/></svg>');
+}
+
+.gl-compare-sidebar li[data-mode="diff"] {
+  background-image: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#34363B" d="M16 0c-8.819 0-16 7.181-16 16 0 8.819 7.181 16 16 16 8.819 0 16-7.181 16-16 0-8.819-7.181-16-16-16zm0 3c7.197 0 13 5.803 13 13s-5.803 13-13 13v-26z"/></svg>');
+}
+
+.gl-compare-sidebar li[data-mode="slide"] {
+  background-image: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="71.364" viewBox="-10.37 13.16 100 71.364" enable-background="new -10.37 13.16 100 71.364"><path fill="#34363B" d="M13.25 53.815v-9.446l-11.81 10.034-11.81 10.043 11.81 10.039 11.81 10.038v-9.446h43.304v-21.262zM77.815 23.198l-11.806-10.038v8.78h-43.312v21.258h43.312v10.12l11.806-10.038 11.815-10.043z"/></svg>');
+}
+
+.gl-compare-test {
+  background-image: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path stroke="#34363B" stroke-width="8" stroke-miterlimit="10" d="M90 20l-60 60-20-20" fill="none"/></svg>');
+}
+
+.gl-compare-hide {
+  background-image: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" enable-background="new 0 0 90 90" height="100" width="100"><path fill="#34363B" d="M49 45l14-14c.5-.5.8-1.3.9-2 .1-.8-.2-1.6-.7-2.1s-1.3-.8-2.1-.7c-.8 0-1.5.4-2 .9l-14 14-14-14c-.5-.5-1.3-.8-2-.9-.8-.1-1.6.2-2.1.7s-.8 1.3-.7 2.1c0 .8.4 1.5.9 2l14 14-14 14c-.5.5-.8 1.3-.9 2-.1.8.2 1.6.7 2.1s1.3.8 2.1.7c.8 0 1.5-.4 2-.9l14-14 14 14c.5.5 1.3.8 2 .9.8.1 1.6-.2 2.1-.7s.8-1.3.7-2.1c0-.8-.4-1.5-.9-2l-14-14z"/></svg>');
+}
+
+.gl-compare-show {
+  background-image: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" height="100" width="100"><path fill="#34363B" d="M25.498 33.368h49.004c.828 0 1.5-.671 1.5-1.5s-.672-1.5-1.5-1.5h-49.004c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5zM74.502 48.5h-49.004c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5h49.004c.828 0 1.5-.671 1.5-1.5s-.672-1.5-1.5-1.5zM74.502 66.632h-49.004c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5h49.004c.828 0 1.5-.671 1.5-1.5s-.672-1.5-1.5-1.5z"/></svg>');
+}
