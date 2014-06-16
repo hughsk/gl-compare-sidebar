@@ -1,13 +1,13 @@
 # gl-compare-sidebar [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
-[<img src="http://imgur.com/N61zzfW.png" align="right"/>](http://hughsk.io/gl-compare-sidebar)
-
 A sidebar UI for [gl-compare](http://github.com/hughsk/gl-compare), intended
 for use in [glslify-workshopper](http://github.com/gl-modules/glslify-workshopper).
 
+[![NPM](https://nodei.co/npm/gl-compare-sidebar.png)](https://nodei.co/npm/gl-compare-sidebar/)
+
 ## Usage
 
-[![NPM](https://nodei.co/npm/gl-compare-sidebar.png)](https://nodei.co/npm/gl-compare-sidebar/)
+[<img src="http://imgur.com/N61zzfW.png" align="right"/>](http://hughsk.io/gl-compare-sidebar)
 
 ### sidebar = createSidebar(compare)
 
