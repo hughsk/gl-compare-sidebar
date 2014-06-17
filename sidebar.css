@@ -1,7 +1,14 @@
+.gl-compare-sidebar.preloading {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
 .gl-compare-sidebar {
   position: fixed;
   top: 4px;
-  left: -328px;
   bottom: 4px;
   width: 320px;
   padding: 4px;
@@ -9,11 +16,25 @@
   background: rgba(52,54,59,0.9);
   color: #FFF;
   font-family: monospace;
-  transition: left 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translate(-100%);
+  -moz-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  -o-transform: translate(-100%);
+  transform: translate(-100%);
+
+  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -moz-transition: -moz-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -ms-transition: -ms-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: -o-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .gl-compare-sidebar.enabled {
-  left: 4px;
+  -webkit-transform: translate(4px);
+  -moz-transform: translate(4px);
+  -ms-transform: translate(4px);
+  -o-transform: translate(4px);
+  transform: translate(4px);
 }
 
 .gl-compare-content {

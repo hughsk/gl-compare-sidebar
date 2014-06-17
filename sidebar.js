@@ -53,6 +53,13 @@ function GLCompareSidebar(compare) {
     .querySelector('[data-mode="'+this.mode+'"]')
     .classList.add('selected')
 
+  // Prevents a weird quirk in chrome where the sidebar would
+  // transition its transform property from translate(0) to
+  // translate(-100%) on page load.
+  setTimeout(function() {
+    self.el.classList.remove('preloading')
+  }, 50)
+
   function isMode(el) {
     return el
       && el.hasAttribute
