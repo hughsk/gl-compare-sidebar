@@ -31,7 +31,7 @@
   font-size: 14px;
 }
 
-.gl-compare-sidebar ul {
+.gl-compare-menu {
   list-style-type: none;
   position: relative;
   margin: 0;
@@ -40,7 +40,7 @@
   height: 48px;
 }
 
-.gl-compare-sidebar ul > li {
+.gl-compare-menu > li {
   cursor: pointer;
   box-sizing: border-box;
   background-color: #A9B0C2;
@@ -64,20 +64,20 @@
   background-size: 21px 21px;
 }
 
-.gl-compare-sidebar ul > li:first-child,
-.gl-compare-sidebar ul > li:last-child {
+.gl-compare-menu > li:first-child,
+.gl-compare-menu > li:last-child {
   border: 0;
 }
 
-.gl-compare-sidebar ul > li[data-mode] {
+.gl-compare-menu > li[data-mode] {
   transition: background-color 0.1s;
 }
 
-.gl-compare-sidebar ul > li[data-mode]:hover {
+.gl-compare-menu > li[data-mode]:hover {
   background-color: #66C4FF;
 }
 
-.gl-compare-sidebar ul > li[data-mode].selected {
+.gl-compare-menu > li[data-mode].selected {
   background-color: #61FF90;
 }
 
