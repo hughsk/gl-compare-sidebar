@@ -1,5 +1,7 @@
 var findup   = require('findup-element')
+var remove   = require('remove-element')
 var slider   = require('range-slider')
+var escape   = require('escape-html')
 var css      = require('insert-css')
 var inherits = require('inherits')
 var Emitter  = require('events/')
@@ -20,19 +22,27 @@ function GLCompareSidebar(compare) {
   Emitter.call(this)
 
   this._enabled = false
+  this._statusColor = null
+  this._status = ''
   this._amount = 1
 
   this.compare = compare
   this.el = document.body.appendChild(domify(markup))
-  this.content = this.el.querySelector('.gl-compare-content')
+  this.content  = this.el.querySelector('.gl-compare-content')
   this.modeBtns = this.el.querySelectorAll('[data-mode]')
+  this.statmsg  = null
 
   if (style) css(style)
   style = null
 
-  var range = this.el.querySelector('.gl-compare-amount')
-  var hide  = this.el.querySelector('.gl-compare-hide')
-  var self  = this
+  var status = this.el.querySelector('.gl-compare-status')
+  var range  = this.el.querySelector('.gl-compare-amount')
+  var hide   = this.el.querySelector('.gl-compare-hide')
+  var test   = this.el.querySelector('.gl-compare-test')
+  var self   = this
+
+  this.elTest   = test
+  this.elStatus = status
 
   range.style.position = 'absolute'
 
@@ -42,6 +52,10 @@ function GLCompareSidebar(compare) {
 
   hide.addEventListener('click', function(e) {
     self.enabled = !self.enabled
+  }, false)
+
+  test.addEventListener('click', function(e) {
+    self.emit('test')
   }, false)
 
   this.el.addEventListener('click', function(e) {
@@ -98,5 +112,43 @@ Object.defineProperty(GLCompareSidebar.prototype, 'amount', {
   get: function() { return this.compare.amount },
   set: function(value) {
     this.compare.amount = value
+  }
+})
+
+Object.defineProperty(GLCompareSidebar.prototype, 'status', {
+  get: function() { return this._status },
+  set: function(value) {
+    this._status = value = value ? String(value) : ''
+
+    if (this.statmsg) {
+      var prev = this.statmsg
+      this.statmsg.style.top = '-50%'
+      this.statmsg.style.opacity = 0
+      this.statmsg = null
+
+      setTimeout(function() {
+        remove(prev)
+      }, 500)
+    }
+
+    if (!value) return
+
+    var msg = this.statmsg = document.createElement('div')
+    msg.innerHTML = escape(value)
+    msg.classList.add('gl-compare-message')
+    msg.classList.add('adding')
+    this.elStatus.appendChild(msg)
+
+    setTimeout(function() {
+      msg.classList.remove('adding')
+    })
+  }
+})
+
+Object.defineProperty(GLCompareSidebar.prototype, 'statusColor', {
+  get: function() { return this._statusColor },
+  set: function(value) {
+    this._statusColor = value = value ? String(value) : null
+    this.elStatus.style.backgroundColor = value
   }
 })
