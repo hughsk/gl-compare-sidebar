@@ -25,6 +25,7 @@ var mesh    = createGeometry(gl)
   .attr('normal', normals.vertexNormals(sphere.cells, sphere.positions))
 
 camera.distance = 3
+sidebar.content.innerHTML = 'hello world lorem ipsum dolor sit amet'
 
 var actualShader = glslify({
     vert: './reverse.vert'

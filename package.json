@@ -26,7 +26,7 @@
     "findup-element": "0.0.0",
     "inherits": "^2.0.1",
     "insert-css": "^0.1.1",
-    "range-slider": "^1.0.0",
+    "range-slider": "^1.0.1",
     "remove-element": "0.0.0"
   },
   "devDependencies": {
