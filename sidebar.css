@@ -92,7 +92,6 @@
 }
 
 .gl-compare-menu > li {
-  cursor: pointer;
   box-sizing: border-box;
   background-color: #A9B0C2;
   border-left: 4px solid rgba(52,54,59,0.65);
@@ -108,6 +107,7 @@
 }
 .gl-compare-top > .gl-compare-test {
   background-size: 18px 18px;
+  cursor: pointer;
 }
 
 .gl-compare-mode > li[data-mode] {
@@ -175,6 +175,7 @@
 }
 
 .gl-compare-top > .gl-compare-hide {
+  cursor: pointer;
   float: right;
   position: relative;
   left: 56px;
